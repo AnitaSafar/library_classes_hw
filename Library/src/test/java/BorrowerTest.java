@@ -23,4 +23,10 @@ public class BorrowerTest {
     public void canBorrow() {
         assertEquals(0, borrower.borrowedBookCount());
     }
+
+    @Test
+    public void canIncreaseBorrowedBookCount() {
+        borrower.increaseBorrowed(book);
+        assertEquals(1, borrower.borrowedBookCount());
+    }
 }

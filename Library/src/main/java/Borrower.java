@@ -17,4 +17,8 @@ public class Borrower {
     public int borrowedBookCount() {
         return this.borrowedBook.size();
     }
+
+    public void increaseBorrowed(Book book) {
+        this.borrowedBook.add(book);
+    }
 }
