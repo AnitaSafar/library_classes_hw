@@ -16,10 +16,13 @@ public class Library {
     }
 
     public void addBookToStock(Book book) {
-        this.stock.add(book);
+        if (this.stockCount() < this.capacity) {
+            this.stock.add(book);
+        }
     }
+
+
 }
 
 
 
-//        Add a capacity to the library and write a method to check if stock is full before adding a book.

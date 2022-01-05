@@ -7,11 +7,13 @@ public class LibraryTest {
 
     Library library;
     Book book;
+    Book book2;
 
     @Before
     public void before() {
-        library = new Library(20);
+        library = new Library(2);
         book = new Book("HP and the Philosopher's Stone", "J.K. Rowling", "Fiction");
+        book2 = new Book("HP and the Chamber of Secrets", "J.K. Rowling", "Fiction");
     }
 
     @Test
@@ -24,4 +26,13 @@ public class LibraryTest {
         library.addBookToStock(book);
         assertEquals(1, library.stockCount());
     }
+
+    @Test
+    public void canNotAddBooks() {
+        library.addBookToStock(book);
+        library.addBookToStock(book2);
+        library.addBookToStock(book2);
+        assertEquals(2, library.stockCount());
+    }
+
 }
